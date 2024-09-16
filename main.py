@@ -12,16 +12,17 @@ templates = Jinja2Templates(directory="templates")
 
 # Adding CORS middleware to allow requests from specific origins
 origins = [
+    "https://vaccinedemand-c0hacegkdehraef7.westindia-01.azurewebsites.net/",
     "https://whfgrx3r-8000.asse.devtunnels.ms",  
     "http://localhost:8000",  
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,  
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],  
-    allow_headers=["*"], 
+    allow_headers=["*"],
 )
 
 # Model for the request
