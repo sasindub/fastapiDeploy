@@ -40,7 +40,8 @@ class DataPoint(BaseModel):
 # Home route to render the HTML page
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+    # return templates.TemplateResponse("index.html", {"request": request})
+    return {"message": "hello"}
 
 # Prediction route 
 @app.post("/predict")
